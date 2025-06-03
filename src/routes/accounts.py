@@ -152,8 +152,8 @@ async def register_user(
     status_code=status.HTTP_200_OK,
     responses={
         400: {
-            "description": "Bad Request - The activation token is invalid or expired, "
-                        "or the user account is already active.",
+            "description": "Bad Request - The activation token is invalid or"
+                           " expired, or the user account is already active.",
             "content": {
                 "application/json": {
                     "examples": {
@@ -543,14 +543,16 @@ async def login_user(
         400: {
             "description": "Bad Request - The provided refresh token is invalid or expired.",
             "content": {
-                "application/json": {"example": {"detail": "Refresh token not found."}
+                "application/json": {
+                    "example": {"detail": "Refresh token not found."}
                 }
             },
         },
         401: {
             "description": "Unauthorized - Refresh token not found.",
             "content": {
-                "content": {"application/json": {"example": {"detail": "User not found."}}
+                "application/json": {
+                    "example": {"detail": "User not found."}
                 }
             },
         },
@@ -566,6 +568,8 @@ async def login_user(
         },
     },
 )
+
+
 async def refresh_access_token(
     token_data: TokenRefreshRequestSchema,
     db: AsyncSession = Depends(get_db),

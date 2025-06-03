@@ -8,7 +8,6 @@ from database.models.accounts import GenderEnum
 from validation import (
     validate_name,
     validate_image,
-    validate_gender,
     validate_birth_date
 )
 
