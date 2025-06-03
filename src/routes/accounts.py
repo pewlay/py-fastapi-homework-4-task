@@ -568,8 +568,6 @@ async def login_user(
         },
     },
 )
-
-
 async def refresh_access_token(
     token_data: TokenRefreshRequestSchema,
     db: AsyncSession = Depends(get_db),
