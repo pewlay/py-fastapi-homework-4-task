@@ -125,6 +125,7 @@ class ProfileCreateRequestSchema(BaseModel):
             )
         return cleaned_info
 
+
 class ProfileResponseSchema(BaseModel):
     id: int
     user_id: int
