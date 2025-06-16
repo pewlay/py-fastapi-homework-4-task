@@ -125,16 +125,16 @@ class ProfileCreateRequestSchema(BaseModel):
             )
         return cleaned_info
 
-        class ProfileResponseSchema(BaseModel):
-            id: int
-            user_id: int
-            first_name: Optional[str] = None
-            last_name: Optional[str] = None
-            gender: Optional[GenderEnum] = None
-            date_of_birth: Optional[date] = None
-            info: Optional[str] = None
-            avatar: Optional[HttpUrl] = None
+class ProfileResponseSchema(BaseModel):
+    id: int
+    user_id: int
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
+    gender: Optional[GenderEnum] = None
+    date_of_birth: Optional[date] = None
+    info: Optional[str] = None
+    avatar: Optional[HttpUrl] = None
 
-            model_config = ConfigDict(
-                from_attributes=True
-            )
+    model_config = ConfigDict(
+        from_attributes=True
+    )
