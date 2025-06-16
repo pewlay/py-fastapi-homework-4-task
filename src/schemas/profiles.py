@@ -47,12 +47,11 @@ class ProfileCreateRequestSchema(BaseModel):
             validate_name(value)
             return value.lower()
         except ValueError as e:
-            # info.field.name дасть ім'я поля (first_name або last_name)
             raise HTTPException(
                 status_code=422,
                 detail=[{
                     "type": "value_error",
-                    "loc": [info.field.name],
+                    "loc": [info.field_name],
                     "msg": str(e),
                     "input": value
                 }]
